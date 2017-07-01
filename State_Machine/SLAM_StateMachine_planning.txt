@@ -1,0 +1,47 @@
+State Machine Planning
+
+States
+    1. Stopped
+    2. Moving
+    3. Force Stop
+    4. Charging
+    5. Calibrating
+        a. sit in place and rotate.
+
+Conditions
+    1. If realtime != current location - force Stop and recalibrate.
+    2. If obstacle is detected - plot it on the map
+    3. Shape is detected at certain size - move towards it.
+    4. Wall in front, too close - force stop.
+    5. Shape is visible - detect. Not visible entirely - move until visible.
+    6. ARtags - distance is certain length away -  Move.
+    7. hasmoved() - if hasn't moved the whole distance, repeat command.
+    8. hasrotated() - if hasn't rotated the whole rotation, repeat command.
+    9. isstopped() - if not stop again, repeat command.
+
+Commands
+    1. Runmotors(rpm, distance)
+    2. Stopmotors()
+    3. Rotate(deg)
+    4. Calibrate()
+    5. Detect Shape size, distance, shape
+    6. FindCurrentlocation() - from the different sensors.
+    7. SLAM location - find
+    8. Run shape tracking.
+    9. Findshortestdistance()
+        a. dikstra's algorithm
+    10. gotoGridpoint(x, y)
+        a. compute plan - high level say go from a to b.
+    11. gotoNeighbor(x, y)
+        b. following plan - go right, left, up, down.
+
+Actions
+    1. Move
+        a. rotate degrees
+        b. forward or backwards
+        c. distance
+        d. speed
+    2. Stop
+    3. Recalibrate
+        a. reset sensors
+    4. Calibrate
