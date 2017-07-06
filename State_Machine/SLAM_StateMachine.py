@@ -105,7 +105,7 @@ class Actions(object):
             self.targetlocationY == self.chargerlocationY
 
         def run_motors(self):
-            return True
+            run_motors_redis(10, 10)
 
         def stop_motors(self):
             return True
