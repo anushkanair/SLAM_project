@@ -1,3 +1,7 @@
+DEPENDENCY
+Encoder library for arduino: https://github.com/PaulStoffregen/Encoder
+	Available for install on latest Arduino IDE.
+
 DESCRIPTION
 readEncoder.ino: Read 2 encoders connected to the SLAM robot on hardware interrup pins of the Mega. Compute instantaneous wheel
 	speed, robot speed and integrate to get robot x, y and orientation with respect to initial pose.
