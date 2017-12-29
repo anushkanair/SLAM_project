@@ -11,7 +11,13 @@ OpenCV 3+
 Redis
 
 SETUP
-Run redis-server.
+Camera calibration:
+	Write distortion coefficients to distort_coeffs, and the camera matrix to camera_mat. We also need the inverse of the
+	camera matrix in camera_mat_inv. The current camera calibration values were computed using a chessBoard.
+	See opencv/samples/cpp/tutorial_code/calib3d/camera_calibration/.
+
+Initialization:
+	Run redis-server.
 
 EXPECTED BEHAVIOR
 If multiple triangles are in the scene, the algorithm outputs the largest triangle.
