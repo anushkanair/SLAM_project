@@ -27,6 +27,9 @@ TRI_L12 = 0.95*146.0
 TRI_L23 = 0.95*146.0
 TRI_L13 = 0.95*87.0
 
+ROBOT_TRANS_MM_PER_SECOND = 84.0
+ROBOT_ROTATE_DEG_PER_SECOND = 40.0
+
 states = ['Rotating', 'Translating', 'Stopped']
 
 class Actions(object):
@@ -88,10 +91,10 @@ class Actions(object):
             return True
 
         def compute_time_translation(self):
-            return abs(self.distance_to_translate)/84.0
+            return abs(self.distance_to_translate)/ROBOT_TRANS_MM_PER_SECOND
 
         def compute_time_rotation(self):
-            return abs(self.angle_to_rotate)/40.0
+            return abs(self.angle_to_rotate)/ROBOT_ROTATE_DEG_PER_SECOND
 
         def update_robot_pose(self):
             self.robot_x = int(self.red.get('robot_xmm'))
